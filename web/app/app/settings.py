@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     # https://github.com/pennersr/django-allauth/issues/1817
     'rest_auth.registration',
     'allauth.socialaccount',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +62,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'app.urls'
@@ -190,3 +193,5 @@ CELERY_BEAT_SCHEDULE = {
     # },
 
 }
+
+CORS_ORIGIN_ALLOW_ALL = True
