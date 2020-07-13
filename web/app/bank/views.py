@@ -146,7 +146,7 @@ class TransactionViewSet(viewsets.GenericViewSet,
             content = {'error': 'No such account'}
             return Response(content, status=status.HTTP_400_BAD_REQUEST)
 
-        serializer.save(account=account)
+        # serializer.save(account=account)
 
         try:
             Transaction.make_transaction(**serializer.validated_data)
